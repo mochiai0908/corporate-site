@@ -106,6 +106,7 @@ header{
         }
 
       }
+      
       // .li.navi_news a
 
       li.navi_company a{
@@ -161,8 +162,7 @@ header{
     li{
 
       list-style: none;
-      margin: 0;
-      padding:0;
+      margin-top: 20pxpc_sidemenu
 
       a{
         display: block;
@@ -319,6 +319,7 @@ header{
         span{
           display: inline;
           margin-bottom: 0px;
+          padding: 50px;
         }
       }
       // li
@@ -334,14 +335,14 @@ footer{
 
   background-color:$blue1;
   color: #fff;
-  padding-top: 20px;
+  padding-top: 50px;
 
   @media (max-width: 550px) {
 
     .container{
 
-      margin: 0;
-      padding: 0;
+      margin-top: 30px;
+      padding-top: 30px;
     }
 
     .sp{
@@ -375,8 +376,6 @@ footer{
 
   }
   // max-width: 550px
-
-
 
   .foot_address{
 
@@ -524,7 +523,6 @@ h1{
 
 .cover_title {
     display: block;
-    font-size: 1.5em;
     font-weight: bold;
 }
 
@@ -551,11 +549,12 @@ h1{
     text-align: left;
     @include fontsize(26);
     color: $blue1;
-    padding-top: 20px;
     font-weight: bold;
     line-height: 1.25;
     letter-spacing: -.1rem;
     border-bottom: 3px solid #42b9d0;
+    margin-bottom: 20px;
+    
     
   }
 
@@ -580,7 +579,7 @@ h1{
 
     .news_title{
       @include fontsize(22);
-      padding: 50px 0 41px 0;
+      padding: 50px 0 20px 0;
     }
 
     .news_lists{
@@ -588,6 +587,7 @@ h1{
       li{
         @include fontsize(14);
         margin-bottom: 20px;
+        margin-top: 20px;
 
         span{
           display: inline;
@@ -614,6 +614,7 @@ h1{
    font-weight: bold;
    background-color: #f3f9fb;
    padding: 15px;
+   margin-top: 30px;
    margin-bottom: 0px;
    
    
@@ -637,10 +638,37 @@ h1{
     text-align: left;
     @include fontsize(26);
     color: $blue1;
-    padding-top: 20px;
+    padding-top: 40px;
     font-weight: bold;
     line-height: 1.25;
     letter-spacing: -.1rem;
     border-bottom: 3px solid #42b9d0;
+    font-size: 2rem;
+    padding-bottom: 20px;
+    color: #42b9d0;
+    border-bottom: 3px solid #42b9d0;
+    font-weight: bold;
+    margin-top: 20;
+    line-height: 1.25;
+    letter-spacing: -.1rem;
+}
     
-  }
+.u-full-width {
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: table;
+    border-color: grey;
+
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
