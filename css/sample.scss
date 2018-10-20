@@ -15,6 +15,7 @@ $ja_font : "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ
 $blue1 : #42b9d0;
 $blue2 : #339fd1;
 $gray_blue : #eaf2f4;
+
 header{
 
   background: $gray_blue;
@@ -28,7 +29,44 @@ header{
     .logo{
       width: 190px;
     }
+
+    .navi{
+      width:40px;
+      float: right;
+    }
   }
+
+  .sp_navi_li{
+    width: 180px;
+    position: absolute;
+    top:50px;
+    right:2%;
+    border: 1px solid #eee;
+    background: white;
+    margin: 0;
+    padding:0;
+    display: none; //追加
+    
+  }
+
+}
+
+    li{
+
+      list-style: none;
+      margin: 0;
+      padding:0;
+
+      a{
+        display: block;
+        padding: 10px 8px;
+        border-bottom: 1px solid #eee;
+        font-size: 14px;
+        text-decoration: none;
+      }
+    }
+    
+// header
 
   @media (min-width: 551px) {
 
@@ -133,7 +171,6 @@ header{
     }
     // .pc_navi_li
 
-  }
   // min-width: 551px
   @media (max-width: 550px) {
     .pc_navi{
@@ -261,11 +298,15 @@ header{
 
 }
 
-#news_area{
+#news_area{ //ここはidなので#です by和田
 
   background-color:$gray_blue;
+  
+  &.news-page{
+    background: #fff; //背景を白に戻します。htmlにもクラス追加してます。
+  }
 
-  @media (min-width: 551px) {
+  @media (min-width: 551px) { 
 
     .container{
 
@@ -286,7 +327,7 @@ header{
     letter-spacing: 0.2rem;
   }
 
-  .news_lists{
+  .news_lists,.news_li{
 
     li{
       list-style: none;
@@ -295,8 +336,12 @@ header{
       span{
         color: $blue1;
         font-weight: bold;
-        display: block;
+        display: inline-block;
         margin-bottom: 3px;
+        
+        @media (max-width: 550px){ //全てでinline-blockになってしまったので、メディアクエリでスマホ用のものを書きました。
+          display: block;
+        }
       }
     }
     // li
@@ -319,7 +364,6 @@ header{
         span{
           display: inline;
           margin-bottom: 0px;
-          padding: 50px;
         }
       }
       // li
@@ -331,18 +375,20 @@ header{
 
 
 }
+// #news_area
+
 footer{
 
   background-color:$blue1;
   color: #fff;
-  padding-top: 50px;
+  padding-top: 20px;
 
   @media (max-width: 550px) {
 
     .container{
 
-      margin-top: 30px;
-      padding-top: 30px;
+      margin: 0;
+      padding: 0;
     }
 
     .sp{
@@ -536,7 +582,6 @@ h1{
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
-    padding: 0 20px;
     box-sizing: border-box;
 
     }
@@ -558,21 +603,21 @@ h1{
     
   }
 
-  .news_li{
+  //.news_li{
 
-    li{
-      list-style: none;
-      @include fontsize(15);
+  //  li{
+  //    list-style: none;
+  //    @include fontsize(15);
 
-      span{
-        color: $blue1;
-        font-weight: bold;
-        display: inline-block;
-        margin-bottom: 3px;
-      }
-    }
+  //    span{
+  //      color: $blue1;
+  //      font-weight: bold;
+  //      display: inline-block;
+  //      margin-bottom: 3px;
+  //    }
+  //  }
     // li
-  }
+ // }
   // .news_lists
 
   @media (min-width: 551px) {
@@ -633,7 +678,7 @@ h1{
     background-repeat: no-repeat;
   }
 
-  .company_title{
+  .company_title,.news_title{
 
     text-align: left;
     @include fontsize(26);
